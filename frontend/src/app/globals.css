@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: #FCFCFC;
+  --color-foreground: #050505;
+  --color-card: #FFFFFF;
+  --color-card-border: rgba(0, 0, 0, 0.08);
+
+  --color-primary: #000000;
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: #52525B;
+  --color-secondary-foreground: #000000;
+
+  --color-muted: #F4F4F5;
+  --color-muted-foreground: #71717A;
+
+  --color-accent: #A855F7;
+  --color-accent-foreground: #FFFFFF;
+
+  --color-success: #10B981;
+  --color-success-foreground: #FFFFFF;
+
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-input: rgba(0, 0, 0, 0.08);
+  --color-ring: #000000;
+
+  --radius: 12px;
+
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Utility Classes */
+
+.defi-card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-card-border);
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  /* Lighter shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.defi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  /* Lighter hover shadow */
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.defi-button-primary {
+  background: #000000;
+  /* Solid Black */
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  color: white;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000000;
+}
+
+.defi-button-primary:hover {
+  transform: translateY(-1px);
+  background-color: #1A1A1A;
+  /* Very dark grey on hover */
+}
+
+.defi-button-secondary {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  color: #000000;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.defi-button-secondary:hover {
+  background: #F4F4F5;
+  border-color: rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.gradient-text {
+  color: #000000;
+  /* Solid black text instead of gradient for headers */
+  font-weight: 800;
+}
